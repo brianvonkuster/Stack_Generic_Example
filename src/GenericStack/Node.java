@@ -19,11 +19,11 @@ public class Node<T> {
 	
 	public Node getLeft()
 	{
-		if (left == null)
+		/*if (left == null)
 		{
 			System.out.println("nothing there");
 			return null;
-		}
+		}*/
 		return left;
 	}
 	

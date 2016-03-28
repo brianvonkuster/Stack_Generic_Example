@@ -8,7 +8,7 @@ public class GenericStack_SingLinkList<T> implements Stack<T> {
 	
 	//private int N;
 	
-	//private int t = -1;
+	private int sz = 0;
 	//private T S[];
 	
 	private Node<T> curNode;
@@ -22,11 +22,7 @@ public class GenericStack_SingLinkList<T> implements Stack<T> {
 
 	@Override
 	public int size() {
-		if (isEmpty())
-		{
-			throw new EmptyStackException();
-		}
-		return t;
+		return sz;
 	}
 
 	@Override
@@ -47,27 +43,29 @@ public class GenericStack_SingLinkList<T> implements Stack<T> {
 		{
 			throw new EmptyStackException();
 		} 
-		return S[t];
+		return curNode.Data();
 	}
 
 	@Override
 	public void push(T element) throws Exception {
-		if (isFirst)
+		
+		Node<T> n = new Node<T>(element);
+		
+		if (size() > 0)
 		{
-			Node<T> n = new Node<T>(element);
-			n.setHead(true);
 			n.setTail(true);
-			curNode = n;
-			isFirst = false;
+			n.setLeft(curNode);
+			curNode.setTail(false);
 		}
 		else
 		{
-			Node<T> n = new Node<T>(element);
-			curNode.setTail(false);
+			n.setHead(true);
 			n.setTail(true);
-			n.setLeft(curNode);
 			curNode = n;
 		}
+		
+		curNode = n;
+		sz++;
 	}
 
 	@Override
@@ -80,16 +78,20 @@ public class GenericStack_SingLinkList<T> implements Stack<T> {
 			throw new EmptyStackException();
 		} 
 		
+		
 		if (curNode.getLeft() == null)
 		{
-			
+			elem = curNode.Data();
 		}
 		else
 		{
+			elem = curNode.Data();
 			curNode.getLeft().setTail(true);
 		}
 		//elem = S[t];
 		//S[t--] = null;
+		curNode = curNode.getLeft();
+		sz--;
 		return elem;
 	}
 
