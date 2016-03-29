@@ -36,6 +36,24 @@ public class G_Stack {
 		System.out.println(Gst.pop());
 		System.out.println(Gst.pop());
 		System.out.println(Gst.pop());
+		
+		/*SinglyLinkedList<Double> sLL = new SinglyLinkedList<Double>();
+		
+		System.out.println("Test 1");
+		sLL.Add(2.22);
+		sLL.Add(4.44);
+		sLL.Add(6.66);
+		sLL.Add(8.88);
+		sLL.Add(10.10);
+		sLL.Add(12.12, 6);
+		System.out.println(sLL.toString());
+
+		System.out.println("Test 2");
+		sLL.Remove(4);
+		sLL.Add(394.0, 6);
+		sLL.Remove(6);
+		System.out.println(sLL.toString());
+		System.out.println(sLL.GetTail().Data());*/
 	}
 
 }

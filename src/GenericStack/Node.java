@@ -3,9 +3,8 @@ package GenericStack;
 public class Node<T> {
 	
 	private T info; // current node
-	private Node left;
-	private boolean isHead = false;
-	private boolean isTail = false;
+	private Node<T> next;
+	private String dir = "left";
 	
 	public Node(T val)
 	{
@@ -17,29 +16,14 @@ public class Node<T> {
 		return info;
 	}
 	
-	public Node getLeft()
-	{
-		/*if (left == null)
-		{
-			System.out.println("nothing there");
-			return null;
-		}*/
-		return left;
+	public Node<T> getNext()
+	{	
+		return next;
 	}
 	
-	public void setLeft(Node n)
+	public void setNext(Node<T> n)
 	{
-		left = n;
-	}
-	
-	public void setHead(boolean b)
-	{
-		isHead = b;
-	}
-	
-	public void setTail(boolean b)
-	{
-		isTail = b;
+		next = n;
 	}
 	
 }
