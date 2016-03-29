@@ -15,6 +15,11 @@ public class SinglyLinkedList<T> {
 		size = 0;
 	}
 	
+	public int size()
+	{
+		return size;
+	}
+	
 	public Node<T> GetHead()
 	{
 		return head;
@@ -48,9 +53,9 @@ public class SinglyLinkedList<T> {
 	
 	public void Add(T data, int index) 
 	{
-		if (index >= size || index <= 0)
+		if ((index-1) > size || index <= 0)
 		{
-			System.out.println("ERROR input outside of List range, try again");
+			System.out.println("Add: ERROR input outside of List range, try again");
 			return;
 		}
 		
@@ -123,7 +128,7 @@ public class SinglyLinkedList<T> {
 	{
 		if (index > size || index < 0)
 		{
-			System.out.println("ERROR input outside of List range, try again");
+			System.out.println("Node: ERROR input outside of List range, try again");
 			return null;
 		}
 		Node<T> tmp = head;

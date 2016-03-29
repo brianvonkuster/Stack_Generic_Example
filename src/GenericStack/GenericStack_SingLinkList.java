@@ -1,7 +1,5 @@
 package GenericStack;
 
-import java.util.EmptyStackException;
-
 public class GenericStack_SingLinkList<T> implements Stack<T> {
 	
 	private SinglyLinkedList<T> singList = new SinglyLinkedList<T>();
@@ -12,39 +10,39 @@ public class GenericStack_SingLinkList<T> implements Stack<T> {
 	}
 
 	@Override
-	public boolean isEmpty() {
-		if (singList.toString() == "")
-		{
-			return true;
-		}
-		return false;
-	}
-
-	@Override
-	public T peek() throws EmptyStackException {
-		if (isEmpty())
-		{
-			throw new EmptyStackException();
-		} 
+	public T peek() {
 		return singList.GetTail().Data();
 	}
 
 	@Override
-	public void push(T element) throws Exception {
+	public void push(T element) {
 		singList.Add(element);
 	}
 
 	@Override
-	public T pop() throws EmptyStackException {
+	public T pop() {
 		T elem;
-		if (isEmpty())
-		{
-			throw new EmptyStackException();
-		}
 		
 		elem = singList.GetTail().Data();
 		singList.Remove(singList.getSize());
 		return elem;
+	}
+	
+	public String toString()
+	{
+		String s = "";
+		for (int i = (singList.getSize()-1); i >= 0; i--)
+		{
+			s += "Stack pos " + (i+1) + ": " + singList.GetNode(i).Data() + "\n";
+		}
+
+		return s;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// EMPTY: DON'T USE
+		return false;
 	}
 
 }
