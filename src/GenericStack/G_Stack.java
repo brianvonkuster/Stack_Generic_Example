@@ -22,7 +22,7 @@ public class G_Stack {
 			System.out.println(n2.getLeft().Data());
 			System.out.println(n2.Data());*/
 		
-		/*GenericStack_SingLinkList<Double> Gst = new GenericStack_SingLinkList<Double>();
+		GenericStack_SingLinkList<Double> Gst = new GenericStack_SingLinkList<Double>();
 		
 		Gst.push(0.2524);
 		Gst.push(1.83);
@@ -35,7 +35,7 @@ public class G_Stack {
 		Gst.push(10.0384);
 		System.out.println(Gst.pop());
 		System.out.println(Gst.pop());
-		System.out.println(Gst.pop());*/
+		System.out.println(Gst.pop());
 		
 		/*SinglyLinkedList<Double> sLL = new SinglyLinkedList<Double>();
 		

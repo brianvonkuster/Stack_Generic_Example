@@ -26,7 +26,7 @@ public class GenericStack_SingLinkList<T> implements Stack<T> {
 		{
 			throw new EmptyStackException();
 		} 
-		return singList.GetHead().Data();
+		return singList.GetTail().Data();
 	}
 
 	@Override

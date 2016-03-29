@@ -4,7 +4,6 @@ public class Node<T> {
 	
 	private T info; // current node
 	private Node<T> next;
-	private String dir = "left";
 	
 	public Node(T val)
 	{

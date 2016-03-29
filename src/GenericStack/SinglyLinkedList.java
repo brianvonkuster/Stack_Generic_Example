@@ -11,6 +11,7 @@ public class SinglyLinkedList<T> {
 	public SinglyLinkedList()
 	{
 		head = null;
+		tail = null;
 		size = 0;
 	}
 	
@@ -40,20 +41,20 @@ public class SinglyLinkedList<T> {
 				curNode = curNode.getNext();
 			}
 			curNode.setNext(tmp);
-			curNode = tmp;
-			tail = tmp;
+			tail = curNode.getNext();
 		}
 		size++;
 	}
 	
 	public void Add(T data, int index) 
 	{
-		Node<T> tmp = new Node<T>(data);
-		if ((index-1) > size || index < 1)
+		if (index >= size || index <= 0)
 		{
 			System.out.println("ERROR input outside of List range, try again");
 			return;
 		}
+		
+		Node<T> tmp = new Node<T>(data);
 		if (index == 1)
 		{
 			tmp.setNext(head);
@@ -71,6 +72,16 @@ public class SinglyLinkedList<T> {
 		}
 		size++;
 	}
+	
+	// String[] s = { "s", "ss", "sss", "" }
+	// getNode(2) == s[2]
+	// for (i=0; i < s.length; i++)
+	// 		if (s[i] == "sss")
+	//			return s[i];
+	// for (i=0; i < size; i++)
+	// 		if (getNode(i).Data() = "sss")
+	//			return getNode(i).Data();
+	
 	
 	public boolean Remove(int index)
 	{
@@ -123,6 +134,22 @@ public class SinglyLinkedList<T> {
 		}
 		
 		return tmp;
+	}
+	
+	public Node<T> FindNode(T data)
+	{
+		Node<T> tmp = head;
+		
+		while (tmp != null)
+		{
+			if (tmp.Data() == data)
+			{
+				return tmp;
+			}
+			tmp = tmp.getNext();
+		}
+		
+		return null;
 	}
 	
 	
