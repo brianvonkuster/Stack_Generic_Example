@@ -22,7 +22,7 @@ public class G_Stack {
 			System.out.println(n2.getLeft().Data());
 			System.out.println(n2.Data());*/
 		
-		GenericStack_SingLinkList<Double> Gst = new GenericStack_SingLinkList<Double>();
+		/*GenericStack_SingLinkList<Double> Gst = new GenericStack_SingLinkList<Double>();
 		
 		Gst.push(0.2524);
 		Gst.push(1.83);
@@ -35,7 +35,7 @@ public class G_Stack {
 		Gst.push(10.0384);
 		System.out.println(Gst.pop());
 		System.out.println(Gst.pop());
-		System.out.println(Gst.pop());
+		System.out.println(Gst.pop());*/
 		
 		/*SinglyLinkedList<Double> sLL = new SinglyLinkedList<Double>();
 		
@@ -54,6 +54,14 @@ public class G_Stack {
 		sLL.Remove(6);
 		System.out.println(sLL.toString());
 		System.out.println(sLL.GetTail().Data());*/
+		
+		GenericQueue<Integer> Gsq = new GenericQueue<Integer>();
+		
+		Gsq.Enqueue(1);
+		Gsq.Enqueue(2);
+		Gsq.Enqueue(3);
+		Gsq.Enqueue(4, 3);
+		System.out.println(Gsq.toString());
 	}
 
 }
