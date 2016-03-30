@@ -56,13 +56,25 @@ public class G_Stack {
 		System.out.println(sLL.toString());
 		System.out.println(sLL.GetTail().Data());*/
 		
-		GenericQueue<Integer> Gsq = new GenericQueue<Integer>();
+		/*GenericQueue<Integer> Gsq = new GenericQueue<Integer>();
 		
 		Gsq.Enqueue(1);
 		Gsq.Enqueue(2);
 		Gsq.Enqueue(3);
 		Gsq.Enqueue(4, 3);
-		System.out.println(Gsq.toString());
+		System.out.println(Gsq.toString());*/
+		
+		DoublyLinkedList<Double> dLL = new DoublyLinkedList<Double>();
+		
+		dLL.AddFirst(3.33);
+		dLL.AddFirst(4.44);
+		dLL.AddFirst(5.55);
+		dLL.AddLast(6.66);
+		dLL.AddLast(7.77);
+		dLL.Remove(1);
+		dLL.Remove(4);
+		
+		System.out.println(dLL.toString());
 	}
 
 }
