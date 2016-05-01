@@ -66,13 +66,16 @@ public class G_Stack {
 		
 		DoublyLinkedList<Double> dLL = new DoublyLinkedList<Double>();
 		
-		dLL.AddFirst(3.33);
-		dLL.AddFirst(4.44);
-		dLL.AddFirst(5.55);
-		dLL.AddLast(6.66);
-		dLL.AddLast(7.77);
-		dLL.Remove(1);
-		dLL.Remove(4);
+		//dLL.AddFirst(3.33);
+		//dLL.AddFirst(4.44);
+		//dLL.AddFirst(5.55);
+		//dLL.AddLast(6.66);
+		//dLL.AddLast(7.77);
+		dLL.Add(2.0, 0);
+		dLL.Add(3.0, 0);
+		dLL.Add(4.0, 0);
+		System.out.println(dLL.GetTail().Data());
+	
 		
 		System.out.println(dLL.toString());
 	}

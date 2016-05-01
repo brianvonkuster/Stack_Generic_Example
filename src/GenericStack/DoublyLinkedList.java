@@ -76,38 +76,45 @@ public class DoublyLinkedList<T> {
 	
 	public void Add(T data, int index) 
 	{
-		if ((index-1) > size || index <= 0)
+		if (index > size || index < 0)
 		{
 			System.out.println("Add: ERROR input outside of List range, try again");
 			return;
 		}
 		
 		Node2<T> tmp = new Node2<T>(data);
-		if (index == 1)
+		if (index == 0)
 		{
-			head.setPrev(tmp);
-			tmp.setNext(head);
+			if (head != null)
+			{
+				head.setPrev(tmp);
+				tmp.setNext(head);
+			}
 			head = tmp;
 		}
-		else if ((index+1) == size())
+		else if (index == size())
 		{
-			tail.setNext(tmp);
-			tmp.setPrev(tail);
+			if (tail != null)
+			{
+				tail.setNext(tmp);
+				tmp.setPrev(tail);
+			}
 			tail = tmp;
 		}
 		else
 		{
-			Node2<T> prevNode = GetNode(index-2);			
+			Node2<T> prevNode = GetNode(index-1);			
 			tmp.setNext(prevNode.getNext());
 			prevNode.getNext().setPrev(tmp);
 			tmp.setPrev(prevNode);
 			prevNode.setNext(tmp);
-			
-			if ((index-1) == size)
-			{
-				tail = tmp;
-			}
 		}
+		
+		if (index == size)
+		{
+			tail = tmp;
+		}
+		
 		size++;
 	}
 	
@@ -123,20 +130,20 @@ public class DoublyLinkedList<T> {
 	
 	public boolean Remove(int index)
 	{
-		if (index > size || index < 1)
+		if (index >= size || index < 0)
 		{
 			System.out.println("ERROR input outside of List range, try again");
 			return false;
 		}
 		Node2<T> tmp;
-		if (index == 1)
+		if (index == 0)
 		{
-			tmp = GetNode(index-1);
+			tmp = GetNode(index);
 			head = tmp.getNext();
 			head.setPrev(null);
 			tmp = null;
 		}
-		else if (index == size())
+		else if (index == (size()-1))
 		{
 			tmp = GetNode(size()-1);
 			tail = tmp.getPrev();
@@ -145,9 +152,9 @@ public class DoublyLinkedList<T> {
 		}
 		else
 		{
-			tmp = GetNode(index-1);
+			tmp = GetNode(index);
 			tmp.getPrev().setNext(tmp.getNext());
-			tmp.getNext().setPrev(tmp);
+			tmp.getNext().setPrev(tmp.getPrev());
 			tmp = null;
 		}
 		
